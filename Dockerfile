@@ -1,4 +1,11 @@
-FROM rockerjp/tidyverse:latest
+FROM rockerjp/verse:latest
+RUN tlmgr install \
+    luatexja \
+    luatexbase \
+    ctablestack \
+    adobemapping \
+    ms \
+    filehook
 RUN Rscript -e "install.packages('boot')"
 RUN Rscript -e "install.packages('pdp')"
 RUN Rscript -e "install.packages('rpart')"

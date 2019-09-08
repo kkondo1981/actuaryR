@@ -1,7 +1,17 @@
 # アクチュアリーのためのR計算環境が一発で整うDockerイメージ
 - アクチュアリーがRで分析作業を行うときに一発で必要なパッケージを全て揃えた計算環境を整えることのできるDockerfileです。
 - パッケージは、SOAの試験Exam PAのシラバスを参考に選定しました。
-- Dockerfileの元は、`rockerjp/tidyverse`です。ggplot2の軸の名前とかをつけるときに日本語でも文字化けしないように設定されているので、文字化けに悩まされることはないと思います。
+- Dockerfileの元は、`rockerjp/verse`です。ggplot2の軸の名前とかをつけるときに日本語でも文字化けしないように設定されているので、文字化けに悩まされることはないと思います。
+- html出力だけではなくPDF出力も対応するようにしました。PDF出力したい場合は、Rmdファイルにおいて最初に入力するヘッダー(メタ情報)を以下のようにしてください。
+```
+---
+documentclass: ltjsarticle
+output:
+  pdf_document:
+    latex_engine: lualatex
+    number_section: TRUE
+---
+```
 
 ## 使い方(Windows10の場合)
 - Windows 10 Proの場合は、Docker for Windows、Windows 10 Homeの場合は、Docker Toolboxをインストール
@@ -13,7 +23,7 @@
 - Dockerを立ち上げる(上部ツールバーにクジラアイコンが出てきて、Docker Desktop RunningとなっていればOK)
 - ターミナルで、以下を入力し通ることを確認
     - `docker --version`
-- 普段ドキュメントなどを保存している`<任意のフォルダ>`に移動
+- 普段ドキュメントなどを保存している`<任意のフォルダ>`に移動v
     - `cd <任意のフォルダのパス>`
 - 　DockerFileを含むフォルダをgit cloneでダウンロード
     - `git clone git@github.com:kotaro0220/actuaryR.git`
