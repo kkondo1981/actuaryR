@@ -26,7 +26,7 @@
     - `docker image ls`
 - R分析用に色々ファイルやcsvファイルなどを保存したいフォルダを任意の場所に作成する(このフォルダを`<分析用フォルダ>`と呼ぶことにする)
 - `actuaryr`というDockerイメージから、コンテナを作成する
-    - `docker create -e PASSWORD=<任意のパスワード> -p 8787:8787 -v <分析用フォルダのパス>:/home/rstudio/ actuaryR`
+    - `docker create -e PASSWORD=<任意のパスワード> -p 8787:8787 -v <分析用フォルダのパス>:/home/rstudio/ actuaryr`
 - 以下のコマンドで、`actuaryr`のDockerイメージから、適当な文字列の名前`<CONTAINER ID>`のコンテナが作成されていることを確認する
     - `docker ps -a`
 - `<CONTAINER ID>`のコンテナを起動する
