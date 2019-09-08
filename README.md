@@ -20,14 +20,14 @@
         - `<任意のフォルダ>`に`actuaryR`というフォルダごと保存される
 - `actuaryR`フォルダに移動
     -  `cd actuaryR`
-- `actuaryR`内のDockerfileをビルドし、`actuaryR`という名前のDockerイメージを作成する
-    - `docker build -t actuaryR .`
--  以下のコマンドで、`actuaryR`というDockerイメージが作成されていることを確認する
+- `actuaryR`内のDockerfileをビルドし、`actuaryr`という名前のDockerイメージを作成する
+    - `docker build -t actuaryr .`
+-  以下のコマンドで、`actuaryr`というDockerイメージが作成されていることを確認する
     - `docker image ls`
 - R分析用に色々ファイルやcsvファイルなどを保存したいフォルダを任意の場所に作成する(このフォルダを`<分析用フォルダ>`と呼ぶことにする)
-- `actuaryR`というDockerイメージから、コンテナを作成する
+- `actuaryr`というDockerイメージから、コンテナを作成する
     - `docker create -e PASSWORD=<任意のパスワード> -p 8787:8787 -v <分析用フォルダのパス>:/home/rstudio/ actuaryR`
-- 以下のコマンドで、`actuaryR`のDockerイメージから、適当な文字列の名前`<CONTAINER ID>`のコンテナが作成されていることを確認する
+- 以下のコマンドで、`actuaryr`のDockerイメージから、適当な文字列の名前`<CONTAINER ID>`のコンテナが作成されていることを確認する
     - `docker ps -a`
 - `<CONTAINER ID>`のコンテナを起動する
     - `docker start <CONTAINER ID>の最初の3文字`
